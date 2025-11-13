@@ -1,0 +1,28 @@
+ipykernel
+tensorboardX
+swanlab
+wandb
+openai
+google-genai
+distro
+
+# for data
+datasets
+scikit-image
+nibabel
+seaborn
+wordcloud
+
+# for verl
+tensordict
+codetiming
+torchdata
+ray
+
+# for Qwen2.5vl
+qwen_vl_utils
+
+# for sam
+iopath
+hydra-core
+albumentations
