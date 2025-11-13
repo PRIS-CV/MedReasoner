@@ -1,0 +1,57 @@
+### model
+model_name_or_path: /home/dataset-assist-0/diaomuxi/model_zoo/Lingshu-7B
+image_max_pixels: 705600
+video_max_pixels: 16384
+trust_remote_code: true
+max_length: 2048
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+freeze_vision_tower: false
+freeze_multi_modal_projector: false
+freeze_language_model: false
+deepspeed: pretraining/ds_z3_config.json
+
+### dataset
+dataset: umrg_sft_14k
+dataset_dir: /home/dataset-assist-0/diaomuxi/dataset_zoo/UMRGv1/train
+template: qwen2_vl
+cutoff_len: 2048
+max_samples: null
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: /home/dataset-assist-0/diaomuxi/yzh/experiments/MedReasoner/Lingshu-7B-SFT/U_MRG_14k
+logging_steps: 1
+save_strategy: epoch 
+save_steps: null
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+report_to: swanlab  # choices: [none, wandb, tensorboard, swanlab, mlflow]
+### swanlab
+use_swanlab: true
+swanlab_project: MedReasoner
+swanlab_run_name: Lingshu-7B-SFT
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+num_train_epochs: 5.0
+learning_rate: 5.0e-6
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+gradient_checkpointing: true
+
+### eval
+# val_size: 0.1
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500
