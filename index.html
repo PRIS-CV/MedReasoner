@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--MedReasoner-->
+  <meta name="description"
+        content="Reinforcement Learning Drives Reasoning Grounding from Clinical Thought to Pixel-Level Precision">
+  <meta name="keywords" content="MedReasoner">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedReasoner</title>
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <!--css file-->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <!--html head icon-->
+  <link rel="icon" href="./static/images/icon.png">
+
+
+  <!--js file-->
+  <script type="text/javascript" src="./static/js/sort-table.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/leaderboard.js"></script>  
+  <script src="./static/js/leaderboard_button.js"></script>
+</head>
+
+
+<!--Start Body-->
+<body>
+
+<!--Nav Content-->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!--nav menu-->
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <!--click-->
+      <!--
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>-->
+      <!--navbar link-->
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <!--<a class="navbar-item" href="https://github.com/RQ-Lab/OBS-Visual">-->
+          <a class="navbar-item">
+            Future Release
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!--title author and link-->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!--main title-->
+          <h1 class="title is-1 publication-title">
+            <!--icon-->
+            <img src="static/images/icon.png" style="width:2.5em; vertical-align: middle" alt="Logo"/> 
+            <span class="medreasoner" style="vertical-align: middle">MedReasoner</span>            
+          </h1>
+          <!--subtitle-->
+          <h2 class="subtitle is-3 publication-subtitle">
+            Reinforcement Learning Drives Reasoning Grounding from Clinical Thought to Pixel-Level Precision
+          </h2>
+
+          <!--author link-->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Zhonghao Yan*<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Muxi Diao*<sup style="color:#4B70F5;"><b>1</b></sup><sup style="color:#06D001;"><b>2</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Yuxuan Yang<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Ruoyan Jing<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span><br>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Jiayuan Xu<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Kaizhou Zhang<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Lele Yang<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Yanxi Liu<sup style="color:#FF8F00;"><b>3</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Kongming Liang†<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="index.html" style="text-decoration: none; color: inherit;">Zhanyu Ma<sup style="color:#4B70F5;"><b>1</b></sup></a>,
+            </span>
+          </div>
+          
+          <!--author institution-->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup style="color:#4B70F5;"><b>1</b></sup>Beijing University of Posts and Telecommunications,</span>
+            <span class="author-block"><sup style="color:#06D001;"><b>2</b></sup>Zhongguancun Academy,</span>
+            <span class="author-block"><sup style="color:#FF8F00;"><b>3</b></sup>Beijing Information Science and Technology University</span>            
+          </div>
+          
+          <!--equal contribution-->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">*Equal contribution</span><br>
+            <span class="author-block">†Corresponding author</span>
+          </div>
+
+          <div style="text-align:center; margin: 10px 0;">
+            <span style="color: #cd2d2d; font-weight: bold; font-size: 1.5em;">AAAI 2026</span>
+          </div>
+
+          <!--links-->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!--arxiv link-->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2508.08177"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!--
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-video"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>-->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/PRIS-CV/MedReasoner"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Huggingface Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/collections/zzzyzh/u-mrg"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+              <!-- Leaderboard Link.-->
+              <!-- <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span> -->
+              <!-- Twitter Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon has-text-white">
+                    <img src="static/images/xicon.png">
+                  </span>
+                  <span>Twitter</span>
+                </a>
+              </span> -->
+              <!--Examples Link-->
+              <!-- <span class="link-block">
+                <a href="#examples"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon has-text-white">
+                    <i class="fas fa-book-open"></i>
+                  </span>
+                  <span>Knowledge Card</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!----------------------------------Main Body---------------------------------->
+
+<!-- Introduction -->
+<section class="hero is-light is-small mb-0">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 driverx">
+      <span class="driverx" style="vertical-align: middle">🌟 Introduction</span>
+    </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+        <p>
+          In real clinical workflows, doctors rarely provide explicit prompts like “segment the left kidney.” Instead, they raise <b>implicit queries</b> such as 
+          “What can be inferred from this shadow?” Existing MLLMs, though capable of vision-language interaction, still produce <b>image-level outputs</b> 
+          and rely heavily on <b>handcrafted spatial prompts</b> for grounding—inputs that are rarely available in practice.
+        </p>
+        <p>
+          Current datasets reflect this disconnect: <b>VQA datasets</b> lack spatial supervision, while <b>segmentation datasets</b> lack language. 
+          No existing dataset aligns implicit clinical queries with <b>chain-of-thought reasoning</b> and <b>pixel-level localization</b>, 
+          making it impossible to evaluate whether a model can truly reason and ground under realistic conditions.
+        </p>
+        <p>
+          To address the limitations of existing medical grounding systems, we define the <span class="medreasoner">Unified Medical Reasoning Grounding (UMRG)</span> task, which challenges models to interpret <i>implicit clinical queries</i>, reason over visual and anatomical cues, and produce <b>accurate pixel-level grounding</b>—mirroring how clinicians observe, reflect, and pinpoint regions of interest in medical images. 
+          We tackle this task with a two-fold approach: (1) we construct <span class="medreasoner">U-MRG-14K</span>, a dataset that pairs implicit queries with interpretable reasoning traces and pixel-level masks; and (2) we introduce <span class="medreasoner">MedReasoner</span>, a reinforcement-learning framework that decouples reasoning from segmentation and grounds vague clinical language without relying on handcrafted spatial prompts.
+        </p>
+        <p>
+          We envision <span class="medreasoner">MedReasoner</span> as a step toward trustworthy and generalizable medical grounding systems, enabling future clinical applications that demand both interpretability and spatial precision.
+        </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="static/images/teaser.png" width="100%"/>
+          <p>
+            Comparison of annotated question and implicit clinical question. The ground-truth bounding box is green, and models' predicted box is red. 
+            <span class="medreasoner">MedReasoner</span> precisely identifies the target with the reasoning trace and achieves accurate grounding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Dataset section-->
+<section class="hero is-light is-small mb-0">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 wemath">
+      <img src="static/images/icon_dataset.png" style="width:2em;vertical-align: middle" alt="Logo"/>
+      <span class="medreasoner" style="vertical-align: middle">U-MRG-14K Dataset</span>
+    </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- Stage Process Overview -->
+        <h2 class="title is-3">Three-Stage Construction Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            To support reasoning-based grounding under implicit clinical queries, we construct <b>U-MRG-14K</b> through a structured three-stage pipeline. 
+            This pipeline combines standardized medical data with GPT-4o–generated question–answer pairs and chain-of-thought reasoning traces, 
+            ensuring both semantic richness and spatial accuracy.
+          </p>
+          <p>
+            Our construction process emphasizes realism and interpretability: we simulate implicit clinical queries using GPT-4o, align them with precise pixel-level masks, and enrich each sample with structured reasoning traces.
+            This design enables both language understanding and spatial evaluation in a unified setting. 
+            To our knowledge, <b>U-MRG-14K</b> is the first dataset to bridge implicit medical questions, chain-of-thought reasoning, and pixel-level grounding at scale.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="static/images/dataset.png" width="100%"/>
+          <p>
+            Overview of the <span class="medreasoner">U-MRG-14K</span> construction pipeline: 
+            (1) Data cleaning and metadata organization manually, 
+            (2) Description and QA format generation via GPT-4o, 
+            (3) QA pair generation with GPT-4o and human verification.
+          </p>
+        </div>
+        <h2 class="title is-3">Comparison with Existing Datasets</h2>
+        <div class="content has-text-justified">
+          <p>
+            While existing medical datasets either offer pixel-level masks or clinical question–answering pairs, 
+            none integrate <b>implicit queries</b> with <b>chain-of-thought (CoT) reasoning</b> and <b>fine-grained spatial grounding</b>. 
+            <b>U-MRG-14K</b> uniquely combines all three: it supports reasoning-aware evaluation with high-quality QA pairs grounded in 
+            pixel-level masks across diverse anatomical regions. It is the <i>first dataset</i> to bridge segmentation and medical VQA 
+            under realistic, implicit clinical language.
+          </p>
+        </div>
+        <div class="box">
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-centered">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th># Prompts</th>
+                  <th>QAs</th>
+                  <th>Sup.</th>
+                  <th>Cat.</th>
+                  <th>CoT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SA-Med2D</td>
+                  <td>20M</td>
+                  <td>❌</td>
+                  <td>-</td>
+                  <td>219</td>
+                  <td>❌</td>
+                </tr>
+                <tr>
+                  <td>BioMedParse</td>
+                  <td>1.1M</td>
+                  <td>❌</td>
+                  <td>3</td>
+                  <td>82</td>
+                  <td>❌</td>
+                </tr>
+                <tr>
+                  <td>IMED</td>
+                  <td>361M</td>
+                  <td>❌</td>
+                  <td>6</td>
+                  <td>204</td>
+                  <td>❌</td>
+                </tr>
+                <tr>
+                  <td>MoCoVQA</td>
+                  <td>100K</td>
+                  <td>✅</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>❌</td>
+                </tr>
+                <tr>
+                  <td><b>U-MRG-14K</b></td>
+                  <td>14K</td>
+                  <td><b>✅</b></td>
+                  <td><b>15</b></td>
+                  <td><b>108</b></td>
+                  <td><b>✅</b></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="has-text-grey mt-2">
+              <b>Sup.</b> = Super-categories &nbsp;&nbsp; <b>Cat.</b> = Fine-grained Categories &nbsp;&nbsp; <b>CoT</b> = Chain-of-Thought reasoning
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Framework section-->
+<section class="hero is-light is-small mb-0">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 wemath">
+      <img src="static/images/icon_framework.png" style="width:2em;vertical-align: middle" alt="Logo"/>
+      <span class="medreasoner" style="vertical-align: middle">MedReasoner Framework</span>
+    </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Our <span class="medreasoner">MedReasoner</span> framework decouples language reasoning from visual segmentation, consisting of two modular components: a trainable <b>Clinical Reasoning Module (CRM)</b> that interprets implicit queries and predicts spatial prompts (a bounding box and two key points), and a frozen <b>Anatomical Segmentation Module (ASM)</b> that converts these prompts into high-resolution masks using MedSAM2. This design enables <i>authentic reasoning</i> without handcrafted spatial cues, avoids phrase overfitting, and supports plug-and-play compatibility with strong segmentation backbones.
+          </p>
+          <p>
+            To optimize the CRM, we design three categories of <b>reward functions</b> tailored to the UMRG task: (1) format rewards to enforce structured output, (2) box and point rewards to evaluate grounding accuracy, and (3) smoothing and penalization terms to ensure training stability and output plausibility. Together, these components guide the model toward reasoning-aligned spatial grounding. Extensive experiments confirm that MedReasoner achieves <b>state-of-the-art performance</b> on U-MRG-14K and generalizes well to unseen clinical queries.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="static/images/model.png" width="100%"/>
+          <p>
+            Overview of the <span class="medreasoner">MedReasoner</span> framework. MedReasoner transforms implicit clinical prompts into pixel-level grounding via a two-stage process. 
+            The <b>CRM</b> first generates intermediate reasoning and grounding outputs (<i>CoT</i>, <i>bounding box</i>, and <i>key points</i>). 
+            Then, the <b>ASM</b> converts the grounded outputs into final segmentation masks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!----------------------------------Experiment Results---------------------------------->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 wemath">📊 Experiment Results on U-MRG-14K</h1>
+  </div>
+</section>
+
+<!-- Leaderboard -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard"><a>🏆 U-MRG-14K Testset Performance</a></h2>
+        <div class="content">
+          <p class="mt-3">
+            📈Results on the <span class="medreasoner">U-MRG-14K</span> test set under the <span class="medreasoner">MedReasoner</span> paradigm. Each candidate uses one medical MLLM as the <b>CRM</b> to output a bounding box and two key points; the <b>ASM</b> is fixed to <i>MedSAM2</i>.
+            <b>Bold</b> numbers denote the best score in each column, and <u>underlined</u> numbers denote the second best.
+          </p>
+          <table id="table1" class="js-sort-table">
+            <thead>
+              <tr style="background-color: #ddd; border-bottom: 2px solid #ddd;">
+                <th style="padding: 8px; text-align: center; color: #000;">#</th>
+                <th style="padding: 8px; text-align: center; color: #000;">🏆 Model</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Size</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Type</th>
+                <th style="padding: 8px; text-align: center; color: #000;">IoU↑</th>
+                <th style="padding: 8px; text-align: center; color: #000;">pDice↑</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Dice↑</th>
+                <th colspan="6" style="padding: 8px; text-align: center; color: #000;">Super-Categories (IoU↑)</th>
+              </tr>
+              <tr style="background-color: #f0f0f0; border-bottom: 1px solid #ddd;">
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;"></th>
+                <th style="padding: 8px; text-align: center; color: #000;">Abdomen</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Brain</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Heart</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Lung</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Neoplasm</th>
+                <th style="padding: 8px; text-align: center; color: #000;">Non-Neoplasm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><b>MedReasoner 🏆</b></td>
+                <td>7B</td>
+                <td>Grounding</td>
+                <td><b>32.42</b></td>
+                <td><b>26.55</b></td>
+                <td><b>37.78</b></td>
+                <td><b>30.27</b></td>
+                <td><b>32.81</b></td>
+                <td><b>34.72</b></td>
+                <td><b>50.75</b></td>
+                <td><b>33.58</b></td>
+                <td><b>37.19</b></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Qwen2.5-VL</td>
+                <td>72B</td>
+                <td>General</td>
+                <td><u>18.32</u></td>
+                <td><u>12.39</u></td>
+                <td><u>29.71</u></td>
+                <td><u>13.60</u></td>
+                <td>20.06</td>
+                <td><u>15.51</u></td>
+                <td><u>35.25</u></td>
+                <td><u>20.69</u></td>
+                <td><u>30.19</u></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>SegZero</td>
+              <td>7B</td>
+              <td>Grounding</td>
+              <td>16.14</td>
+              <td>5.23</td>
+              <td>26.05</td>
+              <td>11.66</td>
+              <td>23.37</td>
+              <td><u>40.23</u></td>
+              <td>22.18</td>
+              <td>12.58</td>
+              <td><u>21.93</u></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>VLMR1-REC</td>
+              <td>3B</td>
+              <td>Grounding</td>
+              <td>13.96</td>
+              <td>—</td>
+              <td>22.19</td>
+              <td>8.64</td>
+              <td>21.81</td>
+              <td>8.19</td>
+              <td>29.77</td>
+              <td>8.76</td>
+              <td>26.59</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Qwen2.5VL</td>
+              <td>7B</td>
+              <td>General</td>
+              <td>12.61</td>
+              <td>7.14</td>
+              <td>22.73</td>
+              <td>6.84</td>
+              <td><u>23.97</u></td>
+              <td>8.37</td>
+              <td>20.79</td>
+              <td>8.00</td>
+              <td>24.97</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>HuatuoGPT</td>
+              <td>7B</td>
+              <td>Medical</td>
+              <td>10.13</td>
+              <td>5.23</td>
+              <td>19.76</td>
+              <td>5.88</td>
+              <td>18.16</td>
+              <td>6.63</td>
+              <td>22.94</td>
+              <td>8.25</td>
+              <td>16.12</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Lingshu</td>
+              <td>7B</td>
+              <td>Medical</td>
+              <td>8.19</td>
+              <td>3.73</td>
+              <td>16.48</td>
+              <td>4.03</td>
+              <td>15.72</td>
+              <td>6.27</td>
+              <td>19.77</td>
+              <td>6.34</td>
+              <td>13.31</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>MedR1</td>
+              <td>2B</td>
+              <td>Medical</td>
+              <td>8.18</td>
+              <td>3.60</td>
+              <td>14.73</td>
+              <td>3.53</td>
+              <td>12.55</td>
+              <td>3.53</td>
+              <td>25.58</td>
+              <td>4.39</td>
+              <td>13.57</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>SAM4MLLM</td>
+              <td>8B</td>
+              <td>Grounding</td>
+              <td>7.94</td>
+              <td>—</td>
+              <td>16.49</td>
+              <td>6.30</td>
+              <td>14.69</td>
+              <td>5.81</td>
+              <td>12.61</td>
+              <td>6.24</td>
+              <td>11.96</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Gemini-2.5-flash</td>
+              <td>—</td>
+              <td>General</td>
+              <td>7.86</td>
+              <td>3.24</td>
+              <td>14.29</td>
+              <td>3.99</td>
+              <td>5.69</td>
+              <td>7.77</td>
+              <td>16.37</td>
+              <td>7.15</td>
+              <td>13.91</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Chiron-o1</td>
+              <td>8B</td>
+              <td>Medical</td>
+              <td>6.40</td>
+              <td>2.46</td>
+              <td>10.05</td>
+              <td>3.82</td>
+              <td>6.90</td>
+              <td>4.20</td>
+              <td>12.86</td>
+              <td>5.53</td>
+              <td>11.31</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>InternVL3</td>
+              <td>8B</td>
+              <td>General</td>
+              <td>5.70</td>
+              <td>2.46</td>
+              <td>9.23</td>
+              <td>3.72</td>
+              <td>6.54</td>
+              <td>3.67</td>
+              <td>14.44</td>
+              <td>3.78</td>
+              <td>8.71</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>MedGamma</td>
+              <td>4B</td>
+              <td>Medical</td>
+              <td>5.39</td>
+              <td>1.90</td>
+              <td>8.90</td>
+              <td>4.23</td>
+              <td>6.92</td>
+              <td>3.41</td>
+              <td>4.78</td>
+              <td>3.17</td>
+              <td>3.90</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>InternVL3</td>
+              <td>78B</td>
+              <td>General</td>
+              <td>4.02</td>
+              <td>1.55</td>
+              <td>7.23</td>
+              <td>2.04</td>
+              <td>2.95</td>
+              <td>2.12</td>
+              <td>12.21</td>
+              <td>1.33</td>
+              <td>8.19</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>MiniInternVL</td>
+              <td>4B</td>
+              <td>Medical</td>
+              <td>2.88</td>
+              <td>0.85</td>
+              <td>4.76</td>
+              <td>1.88</td>
+              <td>2.67</td>
+              <td>1.60</td>
+              <td>7.99</td>
+              <td>1.56</td>
+              <td>3.76</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>GPT-4o</td>
+              <td>—</td>
+              <td>General</td>
+              <td>2.65</td>
+              <td>1.12</td>
+              <td>4.72</td>
+              <td>0.92</td>
+              <td>0.91</td>
+              <td>0.36</td>
+              <td>11.70</td>
+              <td>1.01</td>
+              <td>4.16</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!----------------------------------Case Studies---------------------------------->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1">🔡 Case Studies</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns is-centered has-text-centered m-6">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <h2 class="title is-4 has-text-centered mb-4">
+            🧩 Meta Information Examples
+          </h2>
+          <div id="case-carousel" class="carousel results-carousel">
+            <div class="box m-5" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+              <div class="content has-text-centered">
+                <img src="static/images/meta_infor_organ1.png" width="90%"/>
+                <img src="static/images/meta_infor_organ2.png" width="90%"/>
+                <img src="static/images/meta_infor_organ4.png" width="90%"/>
+                <img src="static/images/meta_infor_organ5.png" width="90%"/>
+                <p> 
+                  Examples of the meta information from four anatomical super-categories. From top to bottom: <b>Abdomen</b>, <b>Abdomen</b>, <b>Brain</b>, <b>Lung</b> and <b>Heart</b>. Each case presents the image along with its: <i>modal</i>, <i>health</i>, <i>super-category</i>, <i>category</i>, <i>short description</i> and <i>long description</i>.
+                </p>
+              </div>
+            </div>
+            <div class="box m-5" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+              <div class="content has-text-centered">
+                <img src="static/images/meta_infor_abnorm1.png" width="90%"/>
+                <img src="static/images/meta_infor_abnorm2.png" width="90%"/>
+                <p> 
+                  Examples of the meta information from two lesions super-categories. From top to bottom: <b>Neoplasm</b> and <b>Non-Neoplasm</b>. Each case presents the image along with its: <i>modal</i>, <i>health</i>, <i>super-category</i>, <i>category</i>, <i>short description</i> and <i>long description</i>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns is-centered has-text-centered m-6">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <h2 class="title is-4 has-text-centered mb-4">
+            🧩 QA Pairs Examples
+          </h2>
+          <div id="case-carousel" class="carousel results-carousel">
+            <div class="box m-5" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+              <div class="content has-text-centered">
+                <img src="static/images/qa_pairs_organ1.png" width="80%"/>
+                <img src="static/images/qa_pairs_organ2.png" width="80%"/>
+                <img src="static/images/qa_pairs_organ4.png" width="80%"/>
+                <img src="static/images/qa_pairs_organ5.png" width="80%"/>
+                <p> 
+                  Examples of the qa pairs from three anatomical super-categories. From top to bottom: <b>Abdomen</b>, <b>Abdomen</b>, <b>Brain</b>, <b>Lung</b> and <b>Heart</b>. Each case presents the image along with its: <i>modal</i>, <i>health</i>, <i>super-category</i>, <i>category</i>, <i>question</i>, <i>think</i>, and <i>answer (bbox, point)</i>.
+                </p>
+              </div>
+            </div>
+            <div class="box m-5" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+              <div class="content has-text-centered">
+                <img src="static/images/qa_pairs_abnorm1.png" width="80%"/>
+                <img src="static/images/qa_pairs_abnorm2.png" width="80%"/>
+                <p> 
+                  Examples of the qa pairs from two lesions super-categories. From top to bottom: <b>Neoplasm</b> and <b>Non-Neoplasm</b>. Each case presents the image along with its: <i>modal</i>, <i>health</i>, <i>super-category</i>, <i>category</i>, <i>question</i>, <i>think</i>, and <i>answer (bbox, point)</i>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!----------------------------------Citation---------------------------------->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">📚 BibTeX Citation</h2>
+    <pre><code>
+    @article{yan2025medreasoner,
+      title={MedReasoner: Reinforcement Learning Drives Reasoning Grounding from Clinical Thought to Pixel-Level Precision},
+      author={Yan, Zhonghao and Diao, Muxi and Yang, Yuxuan and Xu, Jiayuan and Zhang, Kaizhou and Jing, Ruoyan and Yang, Lele and Liu, Yanxi and Liang, Kongming and Ma, Zhanyu},
+      journal={arXiv preprint arXiv:2508.08177},
+      year={2025}
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<!--footer-->
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is adapted from <a href="https://we-math.github.io/">We-Math</a> and <a href="https://csbench.github.io/">CS-Bench</a>, licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!----------------------------------End Body---------------------------------->
+
+</body>
+</html>
