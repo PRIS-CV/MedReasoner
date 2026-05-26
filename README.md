@@ -1,7 +1,7 @@
 <h1 align="center">MedReasoner: Reinforcement Learning Drives Reasoning Grounding from Clinical Thought to Pixel-Level Precision</h2>
 
 <div align="center">
-<a href="https://pris-cv.github.io/MedReasoner.github.io/"><img src="https://img.shields.io/static/v1?label=Project&message=Github&color=blue&logo=github-pages"></a> &ensp;
+<a href="https://pris-cv.github.io/MedReasoner/"><img src="https://img.shields.io/static/v1?label=Project&message=Github&color=blue&logo=github-pages"></a> &ensp;
 <a href="https://arxiv.org/abs/2508.08177"><img src="https://img.shields.io/static/v1?label=Arxiv&message=Paper&color=red&logo=arxiv"></a> &ensp;
 <a href="https://huggingface.co/collections/zzzyzh/u-mrg"><img src="https://img.shields.io/static/v1?label=Dataset&message=U-MRG&color=yellow&logo=huggingface"></a> &ensp;
 <a href="https://huggingface.co/collections/zzzyzh/medreasoner"><img src="https://img.shields.io/static/v1?label=Models&message=MedReasoner&color=yellow&logo=huggingface"></a> &ensp;
