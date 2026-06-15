@@ -8,8 +8,10 @@
 </div>
 
 ## 🔥 News
-MedReasoner has been accepted at AAAI 2026 as a poster!
-
+- [2025/12/30] The dataset and model checkpoints are publicly available! 🚀
+- [2025/12/01] The code are publicly available! 🚀
+- [2025/11/08] MedReasoner has been accepted at AAAI 2026 as a poster! 🎉
+- [2025/08/11] MedReasoner is now live on arXiv! 🔥
 
 ## 👀 Introduction
 <img src=assets/teaser.png width=100% />
